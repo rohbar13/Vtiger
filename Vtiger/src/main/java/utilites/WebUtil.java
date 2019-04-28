@@ -70,7 +70,7 @@ public class WebUtil {
 	}
 	
 	public void moveToElement(WebDriver driver,WebElement element) {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 	
 	public void getText(){
@@ -90,10 +90,14 @@ public class WebUtil {
 	}
 	
 	public void selectDropDropSearch(WebDriver driver,String dropdownName, String value) throws InterruptedException {
-		WebElement sal = driver.findElement(By.xpath("//select[@name='"+dropdownName+"']/following-sibling::div"));
-		sal.click();
+		Thread.sleep(1500);
+		WebElement el = driver.findElement(By.xpath("//select[@name='"+dropdownName+"']/following-sibling::div"));
+		
+		moveToElement(driver, el);
+		
+		el.click();
 		Thread.sleep(1000);
-		WebElement salText = sal.findElement(By.xpath(".//input"));
+		WebElement salText = el.findElement(By.xpath(".//input"));
 		salText.sendKeys(value);
 		salText.sendKeys(Keys.ENTER);
 		

@@ -2,12 +2,10 @@ package login;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
 
 import utilites.Browser;
 
 public class LoginPage {
-
 	
 	public WebDriver login() {
 		Browser browser = new Browser();
@@ -22,9 +20,5 @@ public class LoginPage {
 		driver.findElement(By.xpath("//button[.='Sign in']")).click();
 		return driver;
 		
-		
-		
 	}
-	
-	
 }
