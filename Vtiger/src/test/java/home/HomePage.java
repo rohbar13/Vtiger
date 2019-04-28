@@ -3,20 +3,20 @@ package home;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 import login.LoginPage;
 
 public class HomePage {
 
-	@Test
-	public void clickModule() throws InterruptedException {
+	
+	public WebDriver clickModule(String moduleName) throws InterruptedException {
+		moduleName = moduleName.toLowerCase();
+		
+		
 		LoginPage lp = new LoginPage();
 		
 		WebDriver driver = lp.login();
-		
-		String moduleName = "leads";
-		
+				
 		switch(moduleName) {
 		
 		case "leads":
@@ -28,7 +28,7 @@ public class HomePage {
 		boolean isPageFound = false;
 		
 		try {
-			driver.findElement(By.id("1111Leads_listView_basicAction_LBL_ADD_RECORD")).isDisplayed();
+			driver.findElement(By.id("Leads_listView_basicAction_LBL_ADD_RECORD")).isDisplayed();
 			isPageFound = true;
 		}catch(Exception e) {
 			isPageFound = false;
@@ -36,13 +36,7 @@ public class HomePage {
 		
 		Assert.assertEquals(isPageFound, true);
 		
+		return driver;
 	}
-	
-	
-	@Test(dependsOnMethods = "clickModule")
-	public void testing() {
-		System.out.println("Testing depends on");
-	}
-	
-	
+		
 }
