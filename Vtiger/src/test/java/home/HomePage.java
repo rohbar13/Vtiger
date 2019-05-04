@@ -9,13 +9,8 @@ import login.LoginPage;
 public class HomePage {
 
 	
-	public WebDriver clickModule(String moduleName) throws InterruptedException {
+	public WebDriver clickModule(WebDriver driver,String moduleName) throws InterruptedException {
 		moduleName = moduleName.toLowerCase();
-		
-		
-		LoginPage lp = new LoginPage();
-		
-		WebDriver driver = lp.login();
 				
 		switch(moduleName) {
 		
