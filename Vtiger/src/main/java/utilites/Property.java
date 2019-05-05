@@ -9,6 +9,11 @@ public class Property {
 	String userName;
 	String password;
 	String url;
+	String browser;
+
+	public String getBrowser() {
+		return browser;
+	}
 
 	public String getUrl() {
 		return url;
@@ -29,6 +34,7 @@ public class Property {
 		this.url = prop.getProperty("url");
 		this.userName = prop.getProperty("userName");
 		this.password = prop.getProperty("password");
+		this.browser = prop.getProperty("browser");
 
 	}
 }

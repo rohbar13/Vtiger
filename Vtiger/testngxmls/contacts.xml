@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="RegressionSuite" verbose="7" >
+  <test name="AcceptanceTest">
+    <classes>
+      <class name="contacts.AddContactTest">
+      <methods>
+        <include name="addContact" />
+      </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

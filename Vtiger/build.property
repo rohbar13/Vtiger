@@ -1,3 +1,4 @@
 url=http://localhost:9990/
+browser=chrome
 userName = admin
 password = admin

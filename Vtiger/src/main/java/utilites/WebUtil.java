@@ -63,6 +63,11 @@ public class WebUtil {
 		el.click();
 	}
 	
+	public void clickElement(WebDriver driver,WebElement element) {
+		moveToElement(driver, element);
+		element.click();
+	}
+	
 	public void sendKeys(WebDriver driver,String locatorType,String element,String value) {
 		WebElement el = getElement(driver, locatorType, element);
 		moveToElement(driver, el);

@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import home.HomePage;
 import login.LoginPage;
+import utilites.Browser;
 import utilites.TestData;
 import utilites.WebUtil;
 
@@ -19,7 +20,6 @@ public class LeadsList{
 
 		TestData td = new TestData();
 		Map<String,String> testData = td.readData("Leads_004");
-		
 		
 		Lead l = new Lead();
 		
@@ -84,7 +84,11 @@ public class LeadsList{
 		WebUtil el = new WebUtil();
 		
 		LoginPage lp = new LoginPage();
-		WebDriver driver = lp.login();
+		
+		Browser browser = new Browser();
+		WebDriver driver = browser.openBrowser("chrome");
+		
+		lp.login(driver);
 		
 		HomePage hp = new HomePage();
 		hp.clickModule(driver,"Leads");
