@@ -19,7 +19,7 @@ public class LeadsList{
 		WebUtil el = new WebUtil();
 
 		TestData td = new TestData();
-		Map<String,String> testData = td.readData("Leads_004");
+		Map<String,String> testData = td.getTestData("Leads","Leads_004");
 		
 		Lead l = new Lead();
 		
@@ -87,6 +87,7 @@ public class LeadsList{
 		
 		Browser browser = new Browser();
 		WebDriver driver = browser.openBrowser("chrome");
+		browser.getURL(driver, "http://localhost:9990/");
 		
 		lp.login(driver);
 		
