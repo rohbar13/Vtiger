@@ -21,7 +21,7 @@ public class Browser {
 			driver = new FirefoxDriver();
 			break;
 		}
-
+		driver.manage().window().maximize();
 		return driver;
 	}
 	

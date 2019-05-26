@@ -23,6 +23,10 @@ public class HomePage {
 			Thread.sleep(2500);
 			driver.findElement(By.id("menubar_item_Potentials")).click();
 			break;
+		case "products":
+			Thread.sleep(2500);
+			driver.findElement(By.id("menubar_item_Products")).click();
+			break;
 		}
 
 		/*

@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 public class WebUtil {
 
 	
-
 /**
  * This method will derive element from the information provided in parameters below
  * @param driver
@@ -70,6 +69,11 @@ public class WebUtil {
 	
 	public void sendKeys(WebDriver driver,String locatorType,String element,String value) {
 		WebElement el = getElement(driver, locatorType, element);
+		moveToElement(driver, el);
+		el.sendKeys(value);
+	}
+	
+	public void sendKeys(WebDriver driver,WebElement el,String value) {
 		moveToElement(driver, el);
 		el.sendKeys(value);
 	}
