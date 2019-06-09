@@ -137,14 +137,13 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/net.wasdev.wlp.maven.plugins/liberty-maven-plugin -->
+		</dependency>		
+		<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/plugin-support -->
 <dependency>
-    <groupId>net.wasdev.wlp.maven.plugins</groupId>
-    <artifactId>liberty-maven-plugin</artifactId>
-    <version>2.6.4</version>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>plugin-support</artifactId>
+    <version>1.0-alpha-1</version>
 </dependency>
-		
 		
 	</dependencies>
 </project>
