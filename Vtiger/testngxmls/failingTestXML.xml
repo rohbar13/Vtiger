@@ -1,8 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="RegressionSuite" verbose="7" >
+  
   <test name="AcceptanceTest" thread-count="2" parallel="true">
     <classes>
-      <class name="contacts.AddContactTest">
+      <class name="testpackage.Class1">
       </class>
     </classes>
   </test>
