@@ -4,64 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 
-
-
 	<build>
 		<directory>${project.basedir}/target</directory>
-		<outputDirectory>${project.build.directory}/lib</outputDirectory>
-		<testOutputDirectory>${project.build.directory}/lib</testOutputDirectory>
+
 		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
-		<scriptSourceDirectory>${project.basedir}/src/main/scripts</scriptSourceDirectory>
 		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
-		
-		
-		
+
+		<testOutputDirectory>${project.build.directory}/bin</testOutputDirectory>
+		<outputDirectory>${project.build.directory}/bin</outputDirectory>
+
 		<plugins>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/lib</outputDirectory>
-							<resources>
-								<resource>
-									<directory>resources</directory>
-									<filtering>true</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			
-			
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/lib</outputDirectory>
-							<overWriteReleases>false</overWriteReleases>
-							<overWriteSnapshots>false</overWriteSnapshots>
-							<overWriteIfNewer>true</overWriteIfNewer>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -72,20 +24,27 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+
+
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+
 		</plugins>
-		
-		
-		
-		
-		
 	</build>
-
-
-
-
-
-
-
 
 
 	<groupId>selenium</groupId>
